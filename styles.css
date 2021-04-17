@@ -4,6 +4,10 @@
     margin-left: 10px;
 }
 
+.container {
+    margin-bottom: 100px;
+}
+
 .calculator img {
     max-width: 25px;
     padding-right: 5px;
