@@ -28,6 +28,7 @@ const pvpTot = document.getElementById("pvp-tot");
 // buttons
 const calculate = document.getElementById("calc");
 const reset = document.getElementById("reset");
+const bread = document.getElementById("bread");
 
 // scalars
 const dmgL = [2, 2];
@@ -73,11 +74,29 @@ calculate.onclick = function () {
 // reset all text fields onclick of reset button
 reset.onclick = function () {
 
-    let fields = document.querySelectorAll(".field")
+    let fields = document.querySelectorAll(".field");
 
     for (let i = 0; i < fields.length; i++) {
         fields[i].value = "";
     }
+
+    let box = document.querySelector(".bread-box");
+
+    while (box.firstChild) {
+        box.removeChild(box.firstChild);
+    }
+
+}
+
+// bread
+bread.onclick = function () {
+
+    let box = document.querySelector(".bread-box");
+
+    img = document.createElement("IMG");
+    img.src = "images/bread.jpg";
+
+    box.appendChild(img);
 
 }
 
