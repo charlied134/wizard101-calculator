@@ -51,7 +51,7 @@ calculate.onclick = function () {
     let b = 1 - magic(Math.max(resist - pierce, 0), resL[0], resK0[0], resN0[0]);
 
     // set outgoing to text fields
-    pveOut.value = Math.max(a, 0).toFixed(5);
+    pveOut.value = Math.max(a, 1).toFixed(5);
     pveIn.value = Math.max(b, 0).toFixed(5);
     pveTot.value = Math.max(a * b, 0).toFixed(5);
 
@@ -60,7 +60,7 @@ calculate.onclick = function () {
     b = 1 - magic(Math.max(resist - pierce, 0), resL[1], resK0[1], resN0[1]);
 
     // set outgoing to text fields
-    pvpOut.value = Math.max(a, 0).toFixed(5);
+    pvpOut.value = Math.max(a, 1).toFixed(5);
     pvpIn.value = Math.max(b, 0).toFixed(5);
     pvpTot.value = Math.max(a * b, 0).toFixed(5);
 
