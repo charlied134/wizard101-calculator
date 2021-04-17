@@ -46,23 +46,27 @@ calculate.onclick = function () {
     resist = Number(resField.value);
     pierce = Number(prcField.value);
 
-    // outgoing/incoming pve
-    let a = 1 + magic(damage, dmgL[0], dmgK0[0], dmgN0[0]);
-    let b = 1 - magic(Math.max(resist - pierce, 0), resL[0], resK0[0], resN0[0]);
+    if (damage >= 0 && resist >= 0 && pierce >= 0) {
 
-    // set outgoing to text fields
-    pveOut.value = Math.max(a, 1).toFixed(5);
-    pveIn.value = Math.max(b, 0).toFixed(5);
-    pveTot.value = Math.max(a * b, 0).toFixed(5);
+        // outgoing/incoming pve
+        let a = Math.max(1 + magic(damage, dmgL[0], dmgK0[0], dmgN0[0]), 1);
+        let b = Math.max(1 - magic(Math.max(resist - pierce, 0), resL[0], resK0[0], resN0[0]), 0);
 
-    // outgoing/incoming pvp
-    a = 1 + magic(damage, dmgL[1], dmgK0[1], dmgN0[1]);
-    b = 1 - magic(Math.max(resist - pierce, 0), resL[1], resK0[1], resN0[1]);
+        // set outgoing to text fields
+        pveOut.value = Math.max(a, 1).toFixed(5);
+        pveIn.value = Math.max(b, 0).toFixed(5);
+        pveTot.value = Math.max(a * b, 0).toFixed(5);
 
-    // set outgoing to text fields
-    pvpOut.value = Math.max(a, 1).toFixed(5);
-    pvpIn.value = Math.max(b, 0).toFixed(5);
-    pvpTot.value = Math.max(a * b, 0).toFixed(5);
+        // outgoing/incoming pvp
+        a = Math.max(1 + magic(damage, dmgL[1], dmgK0[1], dmgN0[1]), 1);
+        b = Math.max(1 - magic(Math.max(resist - pierce, 0), resL[1], resK0[1], resN0[1]), 0);
+
+        // set outgoing to text fields
+        pvpOut.value = a.toFixed(5);
+        pvpIn.value = b.toFixed(5);
+        pvpTot.value = (a * b).toFixed(5);
+
+    }
 
 }
 
