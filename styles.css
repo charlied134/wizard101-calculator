@@ -1,0 +1,31 @@
+/* CSS Document */
+
+.logo {
+    margin-left: 10px;
+}
+
+img {
+
+    max-width: 25px;
+    padding-right: 5px;
+}
+
+a:link,
+a:visited {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="text"]:disabled {
+    background-color: #FFF;
+}
+
+.input-group-text {
+
+    width: 115px;
+
+}
