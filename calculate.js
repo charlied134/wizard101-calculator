@@ -112,7 +112,7 @@ function magic(x, L, k0, n0) {
     if (k0 !== 0)
         k = Math.log((100 * L) / ((100 * L) - k0)) / k0;
     else
-        k = 1 / 100 * L
+        k = 1 / (100 * L)
 
     n = Math.log(1 - (k0 + n0) / (100 * L)) + k * (k0 + n0);
 
